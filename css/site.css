@@ -1,8 +1,147 @@
+:root {
+    /* CSS Variables */
+    /* fonts */
+    --jm-title-font: 'Bebas Neue', sans-serif;
+    --jm-subtitle-font: 'Fira Sans', sans-serif;
+    --jm-heading-font: 'Bebas Neue', sans-serif;
+    --jm-body-font: 'Roboto', sans-serif;
+
+    /* colors */
+    --jm-dark-color: #212121;
+    --jm-light-color: #deeefb;
+    --jm-background-color: rgba(250,250,250,0.8);  
+
+    /* text-styles */
+    --jm-title-color: var(--jm-dark-color);
+    --jm-font-size: 1.2rem;
+    --jm-font-weight: 400;
+    --jm-line-height: 1.5rem;
+}
+
 #Title {
     font-family: 'Ephesis', cursive;
     font-weight: bold;
 }
 
-body {
-    background-color: rgb(220, 177, 242);
+body{
+    font-family: var(--jm-body-font);
+    font-size: var(--jm-font-size);
+    font-weight: var(--jm-font-weight);
+    line-height: var(--jm-line-height);
+    color: var(--jm-dark-color);
+    background-color: var(--jm-background-color);
 }
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--jm-heading-font);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .1rem;
+    color: var(--jm-title-color);
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* when flex-direction is a column, then justify-content & align-items flip */
+    justify-content: center; 
+}
+
+a {
+    color : var(--jm-theme-500);
+}
+
+a:hover {
+    color: var(--jm-theme-400);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--jm-theme-600);
+    --bs-btn-border-color: var(--jm-theme-600);
+    --bs-btn-hover-bg: var(--jm-theme-700);
+    --bs-btn-hover-border-color: var(--jm-theme-700);
+    --bs-btn-active-bg: var(--jm-theme-800);
+    --bs-btn-active-border-color: var(--jm-theme-800);
+}
+
+
+/* #region Section styles */
+.section-page:nth-child(odd),
+.section-page:nth-child(odd)>.container::after {
+    background-color: var(--jm-theme-150);
+}
+.section-page:nth-child(even),
+.section-page:nth-child(even)>.container::after{
+    background-color: var(--jm-theme-100);
+}
+
+.section-page{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.section-page>.container::after {
+    content: "";
+    position: absolute;
+    height: 3rem;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    bottom: -3rem;
+
+    /* rounded dividers */
+    /* clip-path: ellipse(50% 100% at top center); */
+
+    /* arrowed divider (down) */
+    /* clip-path: polygon(0% 0%, 50% 100%, 100% 0%); */
+}
+
+/* alternating angled dividers */
+.section-page:nth-child(even)>.container::after {
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+.section-page:nth-child(odd)>.container::after {
+    clip-path: polygon(100% 100%, 100% 0%,  0% 0%);
+}
+
+/* #endregion Section Styles */
+@media (min-width: 576px) { 
+    .mainTitle {
+        font-size: 7rem;
+        line-height: 5.5rem;
+    }
+    
+    .subTitle {       
+        font-size: 1.7rem;
+        line-height: 1.2rem;
+        letter-spacing: .18rem;
+        
+    }
+    
+    .mainLogo {
+        height: .5em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+
+}
+/* #region Footer */
